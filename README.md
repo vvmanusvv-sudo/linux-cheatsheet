@@ -94,16 +94,16 @@ ls -lS    # Sort by file size (largest first)
 Example output of `ls -lh`:
 
 ```
-drwxr-xr-x  3 jan jan 4.0K Jul 20 09:12 project
--rw-r--r--  1 jan jan  128 Jul 19 22:04 notes.txt
--rwxr-xr-x  1 jan jan 2.1K Jul 18 14:33 backup.sh
+drwxr-xr-x  3 user user 4.0K Jul 20 09:12 project
+-rw-r--r--  1 user user  128 Jul 19 22:04 notes.txt
+-rwxr-xr-x  1 user user 2.1K Jul 18 14:33 backup.sh
 ```
 
 **`find` — Targeted search**
 
 ```bash
 find . -name "*.js"                 # All .js files in current directory (recursive)
-find /home -user jan                # All files owned by "jan"
+find /home -user alex               # All files owned by "alex"
 find . -mtime -7                    # Files modified in the last 7 days
 find . -size +100M                  # Files larger than 100 MB
 find . -type d -empty               # Find empty directories
@@ -247,7 +247,7 @@ Control access rights and ownership of files.
 | `chgrp` | Change group | `chgrp developers file.txt` |
 | `umask` | Show/set default permission mask | `umask 022` |
 | `getfacl` | Show extended ACL permissions | `getfacl file.txt` |
-| `setfacl` | Set extended ACL permissions | `setfacl -m u:jan:rwx file` |
+| `setfacl` | Set extended ACL permissions | `setfacl -m u:alex:rwx file` |
 
 <details>
 <summary>📚 More Examples & Explanations for Permissions</summary>
@@ -514,7 +514,7 @@ Run commands automatically at specific times.
 
 ```bash
 # Example entry: daily backup at 3 AM
-0 3 * * * /home/jan/backup.sh >> /home/jan/backup.log 2>&1
+0 3 * * * /home/user/backup.sh >> /home/user/backup.log 2>&1
 ```
 
 </details>
@@ -555,7 +555,7 @@ Check connections, transfer data, and view network configuration.
 curl -I [https://example.com](https://example.com)                  # Fetch HTTP headers only
 curl -O [https://example.com/file.zip](https://example.com/file.zip)         # Save file with original name
 curl -X POST -H "Content-Type: application/json" \
-     -d '{"name":"Jan"}' [https://api.example.com/users](https://api.example.com/users)
+     -d '{"name":"Alex"}' [https://api.example.com/users](https://api.example.com/users)
 ```
 
 **SSH Port Forwarding (Local → Remote)**
@@ -570,7 +570,7 @@ ssh -L 8080:localhost:80 user@server.com
 ```
 Host myserver
     HostName 192.168.1.100
-    User jan
+    User user
     Port 22
     IdentityFile ~/.ssh/id_ed25519
 ```
@@ -732,12 +732,12 @@ Manage user accounts, groups, and system-level permissions.
 |---|---|---|
 | `whoami` | Show current user | `whoami` |
 | `id` | Show user and group IDs | `id` |
-| `useradd -m` | Create new user with home directory | `sudo useradd -m jan` |
-| `usermod -aG` | Add user to a group | `sudo usermod -aG sudo jan` |
+| `useradd -m` | Create new user with home directory | `sudo useradd -m alex` |
+| `usermod -aG` | Add user to a group | `sudo usermod -aG sudo alex` |
 | `passwd` | Change password | `passwd` |
-| `userdel` | Delete user | `sudo userdel -r jan` |
+| `userdel` | Delete user | `sudo userdel -r alex` |
 | `groupadd` | Create new group | `sudo groupadd developers` |
-| `su` | Switch to another user | `su jan` |
+| `su` | Switch to another user | `su alex` |
 | `sudo` | Execute command with root privileges | `sudo apt update` |
 | `sudo -l` | Show own sudo privileges | `sudo -l` |
 | `who` / `w` | Show logged-in users | `who` |
@@ -749,7 +749,7 @@ Manage user accounts, groups, and system-level permissions.
 **Add user to a group (e.g., use Docker without sudo)**
 
 ```bash
-sudo usermod -aG docker jan
+sudo usermod -aG docker alex
 # Afterwards: log out and back in for the group membership to take effect
 ```
 
@@ -1000,7 +1000,7 @@ sleep 10 && echo "Done!"
 
 ## 22 · ✅ Interactive Learning Checklist
 
-Check off what you already confidently master — handy for keeping track of your own progress (works directly in GitHub and Markdown editors).
+Check off what you already confidently master — handy for keeping track of progress (works directly in GitHub and Markdown editors).
 
 - [ ] Navigation & File System (`cd`, `ls`, `find`)
 - [ ] Managing Files & Directories (`cp`, `mv`, `rm`, `ln`)
@@ -1073,6 +1073,6 @@ Try `kill -15 <PID>` (SIGTERM) first — this allows the program to clean up gra
 
 <div align="center">
 
-*Last updated: July 2026 · Created as a personal reference*
+*Linux Command Reference Cheat Sheet*
 
 </div>
